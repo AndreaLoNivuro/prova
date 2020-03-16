@@ -13,4 +13,6 @@ export class AppComponent {
 
   //esempio prova per capire come funziona innerHTML
   HTMLString = '<div><p>Prova1</p></div>';
+
+  linkUrl = 'https://google.it';
 }

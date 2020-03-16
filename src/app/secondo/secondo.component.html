@@ -1,1 +1,9 @@
 <p>secondo works!</p>
+<div (click)="clickEvent($event, 1)">
+    <p>Testo</p>
+    <button (click)='clickEvent($event, 2)'>Cliccami!</button>
+</div>
+
+<input (input)="inputEvent($event)" [value]='testo'>
+<input [(ngModel)]="testo">
+<p>{{testo}}</p>

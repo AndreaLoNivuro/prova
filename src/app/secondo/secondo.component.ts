@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondoComponent implements OnInit {
 
+  testo: string = 'Iniziale';
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clickEvent(ev: MouseEvent, param: number) {
+    if (param === 2) {
+      this.testo = 'Default';
+    }
+    console.log('Ho cliccato un pulsante '+param);
+    ev.stopPropagation();
+    //serve per fermare la propagazione del clic
+  }
+
+  inputEvent(ev /*: InputEvent*/) {
+    this.testo = ev.target.value;
+    //value è una proprietà dei campi di imput, ed indica ciò 
+    //che c'è scritto dentro
   }
 
 }

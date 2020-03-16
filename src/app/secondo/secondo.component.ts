@@ -24,6 +24,7 @@ export class SecondoComponent implements OnInit {
 
   inputEvent(ev /*: InputEvent*/) {
     this.testo = ev.target.value;
+    //target si riferisce all'input se è input, botton se è botton, ecc
     //value è una proprietà dei campi di imput, ed indica ciò 
     //che c'è scritto dentro
   }

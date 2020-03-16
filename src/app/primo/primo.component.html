@@ -1,3 +1,11 @@
+<!-- oggetto -->
+<p>{{oggetto?.chiave}}</p>
+<p>{{oggetto1?.chiave}}</p>
+<!-- il punto di domanda indica 'se l'oggetto c'è fallo 
+visualizzare, se non c'è, continua 
+in questo caso il primo non verrà visualizzato perchè non
+inizializzato, mentre il secondo si-->
+
 <p>{{title}}</p>
 <p>title</p>
 <p [innerHTML]='title'>title</p>
@@ -19,4 +27,31 @@
   <a [href]="linkUrl">Link</a>
   <!-- stiamo inserendo href come fosse una property -->
 </div>
-<p>{{titoloInput}} works!</p>
+
+<div>{{lista[0]}}</div>
+<div>{{lista[1]}}</div>
+<div>{{lista[2]}}</div>
+<!-- in questo modo, però, se aggiungessimo cose alla lista
+dovremmo ogni colta scrivere manualmente il div -->
+
+<!-- con il for, per evitare di non ripetere i div 
+infatti, nella lista c'è anche il 6, ma sopra
+non si vede perchè non abbiamo inserito il div manualmente
+mentre così uscirà -->
+<div *ngFor="let pippo of lista" >
+    {{pippo}}
+</div>
+
+<p>{{titoloInput | uppercase}} works!</p>
+<p>{{'ciao ' + titoloInput}} works!</p>
+<!-- quella modifica uppercase/lowercase, funziona solo in visualizzazione
+quindi non modifica veramente la variabile -->
+
+<p>{{myDate}}</p>
+<!-- si può formattare la data e darle una visualizzazione diversa -->
+<p>{{myDate | date}}</p>
+<p>{{myDate | date: 'longDate' | lowercase}}</p>
+<p>{{myDate | date: 'long' | uppercase}}</p>
+<!-- ci sono delle formattazioni diverse da richiamare tramite una stringa, 
+come 'long' 'londDate' ecc -->
+

@@ -47,11 +47,16 @@ mentre così uscirà -->
 <!-- quella modifica uppercase/lowercase, funziona solo in visualizzazione
 quindi non modifica veramente la variabile -->
 
-<p>{{myDate}}</p>
+<p [class.colorRed] = "toggleStyle" [class.boldStyle] = "!toggleStyle">{{myDate}}</p>
+<button (click)="toggleStyle = !toggleStyle">Toggle Style</button>
 <!-- si può formattare la data e darle una visualizzazione diversa -->
 <p>{{myDate | date}}</p>
-<p>{{myDate | date: 'longDate' | lowercase}}</p>
-<p>{{myDate | date: 'long' | uppercase}}</p>
+<p [ngClass] = "{colorRed:toggleStyle, boldStyle:!toggleStyle}">{{myDate | date: 'longDate' | lowercase}}</p>
+<p [ngClass] = "myStyles">{{myDate | date: 'long' | uppercase}}</p>
 <!-- ci sono delle formattazioni diverse da richiamare tramite una stringa, 
 come 'long' 'londDate' ecc -->
+
+<div *ngFor="let stringa of lista2">
+  <p>{{ stringa }}</p>
+</div>
 

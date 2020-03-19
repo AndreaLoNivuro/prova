@@ -3,7 +3,39 @@
     <p>Testo</p>
     <button (click)='clickEvent($event, 2)'>Cliccami!</button>
 </div>
+<div> 
+    <p>{{ testo }}</p>
+</div>
+<div>
+    <button (click)="clickNew(inputTwoWayRef.value)">Mostra One Way value</button>
+    <p>{{ inputTwoWayRef.value }}</p>
+</div>
+<div>
+    <input [value]='testo' #inputPropertyRef>
+    <label>One way binding verso l'utente [value]='testo'</label>
+    <p>Valore inputPropertyRef: {{ inputPropertyRef.value }}</p>
+    <!-- questo non scrive da nessuna parte, è solo in lettura (come se fosse solo in getter) 
+    quindi mostrerà solo la variabile testo, senza poterla modificare-->
+</div>
+<div>
+    <input (input)="inputEvent($event)" #inputEventRef>
+    <label>One way binding verso il codice (input)="inputEvent(this.testo = ev.target.value;)"</label>
+    <p>Valore inputEventRef: {{ inputEventRef.value }}</p>
+    <!-- quando scrivi qua, va a modificare tutti gli altri input, ma quando 
+    si scrve negli altri input, questo non si modifica perchè è una variabile vuota 
+    
+    quindi, va si a modificare la variabile testo, ma con il suo input -->
+</div>
+<div>
+    <input (input)="inputEvent($event)" [value]='testo' #inputTwoWayRef>
+    <label>Two way binding fatto "a mano"</label>
+    <p>Valore inputTwoWayRef: {{ inputTwoWayRef.value }}</p>
+    <!-- questo funziona sia da input che da output, quindi è in grado di modificare
+    la variabile testo, e in più è in grado di leggerla -->
+</div>
+<div>
+    <input [(ngModel)]="testo">
+    <label>Two way binding con ngModel</label>
+</div>
 
-<input (input)="inputEvent($event)" [value]='testo'>
-<input [(ngModel)]="testo">
-<p>{{testo}}</p>
+

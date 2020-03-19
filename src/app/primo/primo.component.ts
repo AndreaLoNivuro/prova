@@ -7,6 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PrimoComponent implements OnInit {
   title = 'prova';
+  
+  toggleStyle: boolean = true;
+
+  lista2: string[] = ['stringa1','stringa2', 'stringa3'];
+  
+  get myStyles() {
+    return {
+    colorRed: this.toggleStyle,
+    boldStyle: !this.toggleStyle
+    }
+  }
+  
   getVal() {
     return 2;
   }

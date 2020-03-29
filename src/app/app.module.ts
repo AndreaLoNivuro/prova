@@ -13,8 +13,8 @@ import { MenuComponent } from './menu/menu.component';
 
 const appRoutes: Routes = [
   { path: 'primo', component: PrimoComponent },
-  { path: 'secondo',      component: SecondoComponent },
-  { path: 'ciclovita',      component: CiclovitaComponent },
+  { path: 'secondo', component: SecondoComponent },
+  { path: 'ciclovita', component: CiclovitaComponent },
   { path: '', redirectTo: '/primo', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent },
 ];

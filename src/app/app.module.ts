@@ -9,6 +9,7 @@ import { CiclovitaComponent } from './ciclovita/ciclovita.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProvaRoutingModule } from './app-routing.module';
+import { HighlightDirective } from './highlight.directive';
 
 
 
@@ -20,6 +21,7 @@ import { ProvaRoutingModule } from './app-routing.module';
     CiclovitaComponent,
     PageNotFoundComponent,
     MenuComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,

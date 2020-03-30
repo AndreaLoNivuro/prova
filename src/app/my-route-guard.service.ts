@@ -10,7 +10,7 @@ export class MyRouteGuardService implements CanActivate {
   constructor(private router: Router) { }
   
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    this.router.navigateByUrl('/primo');
+    //this.router.navigateByUrl('/primo');
     return true;
   }
 }

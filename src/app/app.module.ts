@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MenuComponent } from './menu/menu.component';
 import { ProvaRoutingModule } from './app-routing.module';
 import { HighlightDirective } from './highlight.directive';
+import { ExponentialStrengthPipe } from './exponential-strength.pipe';
 
 
 
@@ -22,6 +23,7 @@ import { HighlightDirective } from './highlight.directive';
     PageNotFoundComponent,
     MenuComponent,
     HighlightDirective,
+    ExponentialStrengthPipe,
   ],
   imports: [
     BrowserModule,

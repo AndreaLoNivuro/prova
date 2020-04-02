@@ -1,14 +1,41 @@
-<form [formGroup]="heroForm">
+<form [formGroup]="heroForm" (ngSubmit)="addHero()">
+    {{ heroForm.value | json }}
     <div>
       <label for="name">Name</label>
       <input type="text" id="name" required formControlName="name">
+      <p *ngIf="nameControl.status === 'INVALID' && nameControl.dirty">Campo Nome obbligatorio</p>
     </div>
+    
     <div>
       <label for="power">Hero Power</label>
       <select id="power" required formControlName="power">
         <option value=""></option>
          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
       </select>
+      <p *ngIf="powerControl.status === 'INVALID' && powerControl.dirty">Campo Nome obbligatorio</p>
     </div>
-    <button type="submit">Submit</button>
+
+    <div formGroupName="address">
+        <div>
+            <label for="street">Via</label>
+            <input type="text" id="street" required formControlName="street">
+        </div>
+        <div>
+            <label for="city">Città</label>
+            <input type="text" id="city" required formControlName="city">
+        </div>
+        <div>
+            <label for="state">Nazione</label>
+            <input type="text" id="state" required formControlName="state">
+        </div>
+        <div>
+            <label for="zip">CAP</label>
+            <input type="text" id="zip" required formControlName="zip">
+        </div>
+    </div>
+    <button type="submit" [disabled]="heroForm.status === 'INVALID'">Submit</button>
+    <button (click)="crearHero()">Pulisci</button>
 </form>
+
+<button (click)="setDefault()">Metti eroe di defaul</button>
+<p *ngFor="let hero of heroList">{{ hero.name }} - {{ hero.power }}</p>

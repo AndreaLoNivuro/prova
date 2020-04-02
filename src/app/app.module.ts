@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ProvaRoutingModule } from './app-routing.module';
 import { HighlightDirective } from './highlight.directive';
 import { ExponentialStrengthPipe } from './exponential-strength.pipe';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 
 
@@ -24,6 +25,7 @@ import { ExponentialStrengthPipe } from './exponential-strength.pipe';
     MenuComponent,
     HighlightDirective,
     ExponentialStrengthPipe,
+    TemplateFormComponent,
   ],
   imports: [
     BrowserModule,

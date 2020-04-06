@@ -13,6 +13,8 @@ import { HighlightDirective } from './highlight.directive';
 import { ExponentialStrengthPipe } from './exponential-strength.pipe';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ReatigComponent } from './reatig/reatig.component';
+import { ObservableExampleComponent } from './observable-example/observable-example.component';
 
 
 
@@ -28,6 +30,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ExponentialStrengthPipe,
     TemplateFormComponent,
     ReactiveFormComponent,
+    ReatigComponent,
+    ObservableExampleComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@
       </select>
       <p *ngIf="powerControl.status === 'INVALID' && powerControl.dirty">Campo Nome obbligatorio</p>
     </div>
+    <app-rating formControlName="rating"></app-rating>
 
     <div formGroupName="address">
         <div>
